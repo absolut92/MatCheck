@@ -1,0 +1,61 @@
+--****Base de dados****--
+
+Tabelas:
+ - Carro:
+	ID_Carro
+	Matricula
+	Marca
+	Modelo
+ - User:
+	ID_Utilizador
+	Email
+	Nome
+	...
+ - Levantamento:
+	ID_Levantamento
+	ID_Carro
+	ID_User
+	Data_Saida
+	Data_Chegada
+	KMs_Saida
+	Combustivel (Y/N)
+	Tipo_Combustivel
+	Valor_Combustivel
+	Aprovado (Y/N)
+	Observacoes
+
+ - Documento:
+	ID_Documento
+	ID_Levantamento
+	ID_Carro
+	...
+
+--****Projecto Java****--
+
+Criação de DAOs para Levantamentos, Utilizadores e carros.
+O utilizador deverá colocar o seu email, deve ser feita uma verificação pela BD devolvendo o nome do utilizador.
+Classe de Insert deverá utilizar o Insert_Check para fazer a verificação das variáveis antes da inserção
+Inserção errada deverá mostrar popup e manter página para correção dos campos
+Escolha de combustivel deverá fazer com que dois campos apareçam. Uma dropdown para o tipo de combustivel e um campo de inteiros para o valor de combustivel.
+
+
+ -Insert_Check:
+	Verificação da matricula segundo DB - Tabela Carro
+	Verificação da data segundo a última inserção em BD - Tabela Levantamento
+	Verificação de KMs segundo última inserção em BD - Tabela Levantamento
+	
+
+ -Combustivel:
+	Permitir colocação do tipo de combustivel e valor colocado
+
+ -User_auth:
+	Obter informações de utilizador pelo email
+ 
+ -Upload:
+	Permitir o upload de vários documentos. Documentos deverão ficar ligados ao ID_Levantamento em questão.
+	Informação de docs deverá ser adicionada à tabela Documento
+ 
+
+--------------------------------------------------------------------
+Verificar como fazer as ligações à BD com o hibernate.
+Verificar utilização do XML de Spring ou dos @
